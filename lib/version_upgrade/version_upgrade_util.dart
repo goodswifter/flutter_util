@@ -62,7 +62,7 @@ class VersionUpgradeUtil {
       // 通过下面的路径获取你的APP在App Store Connect上面的版本号，截图在下面会贴上来
       // 如果感觉这个方法不靠谱的朋友也可以在version.json里配上刚刚上传审核成功的APP版本号, 然后和本地获取到的APPversion对比，需要更新跳转到App Store进行下载即可
       const iosApi = "https://itunes.apple.com/cn/lookup?id=1631943968";
-      final res = await Dio().get(iosApi);
+      final Response res = await Dio().get(iosApi);
       final Map? resData = json.decode(res.data);
       final List? resResults = resData?['results'];
       if (resData == null || resResults == null || resResults.isEmpty) return;

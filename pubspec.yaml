@@ -20,6 +20,14 @@ dependencies:
   dio: ^4.0.6
   # url运行工具
   url_launcher: ^6.1.5
+  # 微信图片选择器 https://pub.flutter-io.cn/packages/wechat_assets_picker
+  wechat_assets_picker: ^8.0.0
+  # 微信相机选择器 https://pub.flutter-io.cn/packages/wechat_camera_picker
+  wechat_camera_picker: ^3.5.0+1
+  # 权限管理
+  permission_handler: ^10.0.0
+  shared_preferences: ^2.0.15
+  synchronized: ^3.0.0+2
 
 dev_dependencies:
   flutter_test:
