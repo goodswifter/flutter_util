@@ -1,0 +1,35 @@
+name: util
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # iOS style icons
+  cupertino_icons: ^1.0.2
+  # 包信息库 https://pub.flutter-io.cn/packages/package_info_plus
+  package_info_plus: ^1.4.3+1
+  # Toast工具
+  fluttertoast: ^8.0.9
+  # dio 网络请求库
+  dio: ^4.0.6
+  # url运行工具
+  url_launcher: ^6.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  # the material Icons class.
+  uses-material-design: true
+
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
