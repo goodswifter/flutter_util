@@ -1,39 +1,43 @@
 import 'package:flutter/cupertino.dart';
-import 'package:util/alert_sheet/action_sheet_widget.dart';
 import 'package:wechat_camera_picker/wechat_camera_picker.dart';
 
+import '../alert_sheet/action_sheet_widget.dart';
 import 'camera_access_util.dart';
 import 'photos_access_util.dart';
+
+typedef Success = void Function(List<AssetEntity>? assets);
 
 ///
 /// Author       : zhongaidong
 /// Date         : 2022-08-17 21:03:25
-/// Description  :
+/// Description  : 相册选择工具
 ///
-class PhotoPickerUtil {
-  static Future<AssetEntity?> pickAsset({required BuildContext context}) async {
-    AssetEntity? assetEntity;
-    showCupertinoModalPopup(
+mixin PhotoPickerUtil {
+  static Future<void> pickAsset({
+    required BuildContext context,
+    Success? success,
+  }) async {
+    showCupertinoModalPopup<AssetEntity?>(
       context: context,
       builder: (ctx) => ActionSheetWidget(
-        actionTitles: const ["拍照", "从手机相册选择"],
+        actionTitles: const ['拍照', '从手机相册选择'],
         onPressed: (ctx, index) async {
-          Navigator.pop(context);
+          Navigator.pop(ctx);
           switch (index) {
             case 0:
-              assetEntity =
+              final AssetEntity? asset =
                   await CameraAccessUtil.cameraImage(context: context);
+              success?.call(asset != null ? [asset] : []);
               break;
             case 1:
               {
                 final List<AssetEntity>? assets =
                     await PhotosAccessUtil.pickerPhotoImage(context: context);
-                assetEntity = assets?.first;
+                success?.call(assets);
               }
           }
         },
       ),
     );
-    return assetEntity;
   }
 }

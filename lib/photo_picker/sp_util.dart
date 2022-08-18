@@ -44,7 +44,7 @@ class SpUtil {
   /// get object.
   static Map? getObject(String key) {
     final String? data = _prefs?.getString(key);
-    return (data == null || data.isEmpty) ? null : json.decode(data);
+    return (data == null || data.isEmpty) ? null : json.decode(data) as Map;
   }
 
   /// put object list.
@@ -69,7 +69,7 @@ class SpUtil {
   static List<Map>? getObjectList(String key) {
     final List<String>? dataLis = _prefs?.getStringList(key);
     return dataLis?.map((value) {
-      final Map dataMap = json.decode(value);
+      final Map dataMap = json.decode(value) as Map;
       return dataMap;
     }).toList();
   }

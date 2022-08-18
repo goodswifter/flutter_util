@@ -34,7 +34,7 @@ class CameraAccessUtil {
       // 只要相册和相机都不是第一次访问, 就提示相机权限未开启
       showModalPopup(context);
     }
-    return null;
+    return assetEntity;
   }
 
   static void showModalPopup(BuildContext ctx) {
@@ -43,7 +43,7 @@ class CameraAccessUtil {
       builder: (context) => CupertinoAlertDialog(
         title: const Text("相机或相册权限未开启"),
         content: const Text(
-          "请在iPhone的“设置 > 京师OA”选项中，允许访问你的摄像头和所有照片。",
+          "请在iPhone的“设置”选项中，允许访问你的摄像头和所有照片。",
           maxLines: 4,
         ),
         actions: [

@@ -9,7 +9,7 @@ class ActionSheetWidget extends StatelessWidget {
   const ActionSheetWidget({
     Key? key,
     required this.actionTitles,
-    this.title = "",
+    this.title = '',
     this.onPressed,
   }) : super(key: key);
 
@@ -33,7 +33,7 @@ class ActionSheetWidget extends StatelessWidget {
       title: title.isNotEmpty ? Text(title) : null,
       actions: actions,
       cancelButton: CupertinoActionSheetAction(
-        child: const Text("取消"),
+        child: const Text('取消'),
         onPressed: () => Navigator.pop(context),
       ),
     );

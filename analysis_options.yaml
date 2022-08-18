@@ -26,6 +26,10 @@ linter:
     # 三、格式化
     # 控制流中尽量使用大括号
     - curly_braces_in_flow_control_structures
+    # 使用单引号
+    - prefer_single_quotes
+    # 需要最后的逗号
+    - require_trailing_commas
 
     # 四、评论
     # 评论使用三斜杠标识
