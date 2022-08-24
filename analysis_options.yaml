@@ -1,7 +1,113 @@
-include: package:flutter_lints/flutter.yaml
+
+#
+# For a list of lints, see: http://dart-lang.github.io/linter/lints/
+# See the configuration guide for more
+# https://github.com/dart-lang/sdk/tree/main/pkg/analyzer#configuring-the-analyzer
+#
+# There are other similar analysis options files in the flutter repos,
+# which should be kept in sync with this file:
+#
+#   - analysis_options.yaml (this file)
+#   - https://github.com/flutter/plugins/blob/master/analysis_options.yaml
+#   - https://github.com/flutter/engine/blob/master/analysis_options.yaml
+#   - https://github.com/flutter/packages/blob/master/analysis_options.yaml
+#
+# This file contains the analysis options used for code in the flutter/flutter
+# repository.
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-raw-types: true
+  errors:
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning
+    # treat missing returns as a warning (not a hint)
+    missing_return: warning
+    # allow having TODO comments in the code
+    todo: ignore
 
 linter:
   rules:
+    # these rules are documented on and in the same order as
+    # the Dart Lint rules page to make maintenance easier
+    # https://github.com/dart-lang/linter/blob/master/example/all.yaml
+    - always_declare_return_types
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_classes_with_only_static_members
+    - avoid_dynamic_calls
+    - avoid_escaping_inner_quotes
+    - avoid_field_initializers_in_const_classes
+    - avoid_function_literals_in_foreach_calls
+    - avoid_redundant_argument_values
+    - avoid_slow_async_io
+    - avoid_type_to_string
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
+    - deprecated_consistency
+    - empty_catches
+    - empty_constructor_bodies
+    - empty_statements
+    - exhaustive_cases
+    - flutter_style_todos
+    - hash_and_equals
+    - iterable_contains_unrelated_type
+    - leading_newlines_in_multiline_strings
+    - library_prefixes
+    - list_remove_unrelated_type
+    - missing_whitespace_between_adjacent_strings
+    - no_adjacent_strings_in_list
+    - no_duplicate_case_values
+    - noop_primitive_operations
+    - null_check_on_nullable_type_parameter
+    - null_closures
+    - overridden_fields
+    - package_api_docs
+    - package_names
+    - package_prefixed_library_names
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_final_fields
+    - prefer_final_in_for_each
+    - prefer_for_elements_to_map_fromIterable
+    - prefer_foreach
+    - prefer_function_declarations_over_variables
+    - prefer_generic_function_type_aliases
+    - prefer_if_elements_to_conditional_expressions
+    - prefer_if_null_operators
+    - prefer_initializing_formals
+    - prefer_inlined_adds
+    - prefer_interpolation_to_compose_strings
+    - prefer_is_not_operator
+    - prefer_iterable_whereType
+    - prefer_null_aware_operators
+    - prefer_spread_collections
+    - prefer_typing_uninitialized_variables
+    - prefer_void_to_null
+    - provide_deprecation_message
+    - recursive_getters
+    - throw_in_finally
+    - tighten_type_of_initializing_formals
+    - type_init_formals
+    - unnecessary_await_in_return
+    - unnecessary_const
+    - unnecessary_getters_setters
+    - unnecessary_new
+    - unnecessary_null_checks
+    - unnecessary_nullable_for_final_variable_declarations
+    - unnecessary_overrides
+    - unnecessary_this
+    - unrelated_type_equality_checks
+    - use_function_type_syntax_for_parameters
+    - use_is_even_rather_than_modulo
+    - use_late_for_private_fields_and_variables
+    - use_named_constants
+    - use_raw_strings
+    - use_rethrow_when_possible
+    - use_test_throws_matchers
+    - valid_regexps
+    - void_checks
+
     # 一、命名
     # 类型定义采用大写驼峰
     - camel_case_types
@@ -103,7 +209,7 @@ linter:
     # 未初始化变量，尽量提供类型
     - prefer_typing_uninitialized_variables
     # 尽可能显式声明变量类型
-    # - always_specify_types
+    - always_specify_types
 
     # 十五、参数
     # 避免使用True或者False作为参数，应该换成更有语义的表达
